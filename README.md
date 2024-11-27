@@ -1,35 +1,35 @@
 # examPreparetion_demo
-�����΍�A�v���f����
+試験対策アプリデモ版
 
 ## Home.cs
-�A�v�����J���čŏ��ɕ\��������ʁB
-���O�C����ʂɑJ�ڂ���B
+アプリを開いて最初に表示される画面。
+ログイン画面に遷移する。
 
 ## Login.cs
-�A�v���Ƀ��O�C�����邽�߂̉�ʁB
-������B
+アプリにログインするための画面。
+未着手。
 
 ## QuestionForm.cs
-�����o�����߂̉�ʁB
-�㕔�ɖ��A������1�`4�̔ԍ��Ɖ𓚂��\�������B
+問題を出すための画面。
+上部に問題、下部に1～4の番号と解答が表示される。
 
-Back�F�ЂƂO�̖��ɖ߂�B(������j
-Next�F�������m�F�����̖��ɉf��B(������j
+Back：ひとつ前の問題に戻る。(未着手）
+Next：正解を確認し次の問題に映る。(未着手）
 
 ## Program.cs
-���C�����������{�B
-Home�̕\���B
+メイン処理を実施。
+Homeの表示。
 
 ## Process.cs
-QuestionForm�ł̏�����S���B
+QuestionFormでの処理を担当。
 
-# Question�N���X
-questionStatement�F��蕶
-answer1�F�𓚇@
-answer2�F�𓚇A
-answer3�F�𓚇B
-answer4�F�𓚇C
-correctAnswer�F����ԍ�
+### Questionクラス
+questionStatement：問題文
+answer1：解答①
+answer2：解答②
+answer3：解答③
+answer4：解答④
+correctAnswer：正解番号
 
-# Question LoadQuestion(int questionId)
-�e�L�X�g�t�@�C���������ǂݍ��݁AQuestion�^���X�g�ɕۑ�
+### Question LoadQuestion(int questionId)
+テキストファイルから問題を読み込み、Question型リストに保存
