@@ -32,13 +32,22 @@
             Button_Answer3 = new Button();
             Button_Answer2 = new Button();
             Button_Answer4 = new Button();
-            Answer1 = new TextBox();
-            Answer2 = new TextBox();
-            Answer3 = new TextBox();
-            Answer4 = new TextBox();
-            button4 = new Button();
-            button5 = new Button();
-            Question = new TextBox();
+            btnBack = new Button();
+            btnNext = new Button();
+            lblQuestionNo = new Label();
+            QuestionPanel = new Panel();
+            pictureNG = new PictureBox();
+            pictureOK = new PictureBox();
+            lblQuestion = new Label();
+            lblAns1 = new Label();
+            lblAns2 = new Label();
+            lblAns3 = new Label();
+            lblAns4 = new Label();
+            btnExit = new Button();
+            btnAnswer = new Button();
+            QuestionPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureNG).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureOK).BeginInit();
             SuspendLayout();
             // 
             // Button_Answer1
@@ -93,78 +102,155 @@
             Button_Answer4.UseVisualStyleBackColor = false;
             Button_Answer4.Click += Button_Answer4_Click;
             // 
-            // Answer1
+            // btnBack
             // 
-            Answer1.Location = new Point(68, 298);
-            Answer1.Multiline = true;
-            Answer1.Name = "Answer1";
-            Answer1.Size = new Size(624, 35);
-            Answer1.TabIndex = 5;
-            Answer1.Text = "1";
-            Answer1.TextChanged += textBox1_TextChanged;
+            btnBack.BackColor = Color.FromArgb(255, 255, 128);
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.Font = new Font("メイリオ", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnBack.Location = new Point(250, 460);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(75, 25);
+            btnBack.TabIndex = 9;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = false;
+            btnBack.Visible = false;
+            btnBack.Click += btnBack_Click;
             // 
-            // Answer2
+            // btnNext
             // 
-            Answer2.Location = new Point(68, 339);
-            Answer2.Multiline = true;
-            Answer2.Name = "Answer2";
-            Answer2.Size = new Size(624, 35);
-            Answer2.TabIndex = 6;
-            Answer2.Text = "2";
+            btnNext.BackColor = Color.FromArgb(255, 255, 128);
+            btnNext.Cursor = Cursors.Hand;
+            btnNext.Font = new Font("メイリオ", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnNext.Location = new Point(395, 460);
+            btnNext.Name = "btnNext";
+            btnNext.Size = new Size(75, 25);
+            btnNext.TabIndex = 10;
+            btnNext.Text = "Next";
+            btnNext.UseVisualStyleBackColor = false;
+            btnNext.Visible = false;
+            btnNext.Click += btnNext_Click;
             // 
-            // Answer3
+            // lblQuestionNo
             // 
-            Answer3.Location = new Point(68, 380);
-            Answer3.Multiline = true;
-            Answer3.Name = "Answer3";
-            Answer3.Size = new Size(624, 35);
-            Answer3.TabIndex = 7;
-            Answer3.Text = "3";
+            lblQuestionNo.AutoSize = true;
+            lblQuestionNo.Font = new Font("メイリオ", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblQuestionNo.ForeColor = Color.Red;
+            lblQuestionNo.Location = new Point(16, 14);
+            lblQuestionNo.Name = "lblQuestionNo";
+            lblQuestionNo.Size = new Size(26, 24);
+            lblQuestionNo.TabIndex = 12;
+            lblQuestionNo.Text = "問";
             // 
-            // Answer4
+            // QuestionPanel
             // 
-            Answer4.Location = new Point(68, 421);
-            Answer4.Multiline = true;
-            Answer4.Name = "Answer4";
-            Answer4.Size = new Size(624, 35);
-            Answer4.TabIndex = 8;
-            Answer4.Text = "4";
+            QuestionPanel.BackColor = Color.AliceBlue;
+            QuestionPanel.Controls.Add(pictureNG);
+            QuestionPanel.Controls.Add(pictureOK);
+            QuestionPanel.Controls.Add(lblQuestion);
+            QuestionPanel.Location = new Point(14, 41);
+            QuestionPanel.Name = "QuestionPanel";
+            QuestionPanel.Size = new Size(682, 251);
+            QuestionPanel.TabIndex = 13;
             // 
-            // button4
+            // pictureNG
             // 
-            button4.BackColor = Color.FromArgb(255, 255, 128);
-            button4.Cursor = Cursors.Hand;
-            button4.Font = new Font("メイリオ", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button4.Location = new Point(250, 460);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 25);
-            button4.TabIndex = 9;
-            button4.Text = "Back";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            pictureNG.BackColor = Color.LightCoral;
+            pictureNG.Image = Properties.Resources.Alert;
+            pictureNG.Location = new Point(273, 130);
+            pictureNG.Name = "pictureNG";
+            pictureNG.Size = new Size(129, 121);
+            pictureNG.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureNG.TabIndex = 2;
+            pictureNG.TabStop = false;
+            pictureNG.Visible = false;
             // 
-            // button5
+            // pictureOK
             // 
-            button5.BackColor = Color.FromArgb(255, 255, 128);
-            button5.Cursor = Cursors.Hand;
-            button5.Font = new Font("メイリオ", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.Location = new Point(395, 460);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 25);
-            button5.TabIndex = 10;
-            button5.Text = "Next";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
+            pictureOK.BackColor = Color.GreenYellow;
+            pictureOK.Image = Properties.Resources.time;
+            pictureOK.Location = new Point(273, 130);
+            pictureOK.Name = "pictureOK";
+            pictureOK.Size = new Size(129, 121);
+            pictureOK.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureOK.TabIndex = 1;
+            pictureOK.TabStop = false;
+            pictureOK.Visible = false;
             // 
-            // Question
+            // lblQuestion
             // 
-            Question.Location = new Point(12, 12);
-            Question.Multiline = true;
-            Question.Name = "Question";
-            Question.Size = new Size(680, 280);
-            Question.TabIndex = 11;
-            Question.Text = "問1.　以下の問いに答えよ。\r\n1 + 1 = ??";
-            Question.TextChanged += Question_TextChanged;
+            lblQuestion.AutoSize = true;
+            lblQuestion.Font = new Font("メイリオ", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblQuestion.Location = new Point(18, 18);
+            lblQuestion.Name = "lblQuestion";
+            lblQuestion.Size = new Size(56, 24);
+            lblQuestion.TabIndex = 0;
+            lblQuestion.Text = "label2";
+            lblQuestion.Click += lblQuestion_Click;
+            // 
+            // lblAns1
+            // 
+            lblAns1.AutoSize = true;
+            lblAns1.Font = new Font("メイリオ", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAns1.Location = new Point(53, 302);
+            lblAns1.Name = "lblAns1";
+            lblAns1.Size = new Size(56, 24);
+            lblAns1.TabIndex = 14;
+            lblAns1.Text = "label2";
+            // 
+            // lblAns2
+            // 
+            lblAns2.AutoSize = true;
+            lblAns2.Font = new Font("メイリオ", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAns2.Location = new Point(53, 343);
+            lblAns2.Name = "lblAns2";
+            lblAns2.Size = new Size(56, 24);
+            lblAns2.TabIndex = 15;
+            lblAns2.Text = "label3";
+            // 
+            // lblAns3
+            // 
+            lblAns3.AutoSize = true;
+            lblAns3.Font = new Font("メイリオ", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAns3.Location = new Point(53, 384);
+            lblAns3.Name = "lblAns3";
+            lblAns3.Size = new Size(56, 24);
+            lblAns3.TabIndex = 16;
+            lblAns3.Text = "label3";
+            // 
+            // lblAns4
+            // 
+            lblAns4.AutoSize = true;
+            lblAns4.Font = new Font("メイリオ", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAns4.Location = new Point(53, 425);
+            lblAns4.Name = "lblAns4";
+            lblAns4.Size = new Size(56, 24);
+            lblAns4.TabIndex = 17;
+            lblAns4.Text = "label3";
+            // 
+            // btnExit
+            // 
+            btnExit.BackColor = Color.Turquoise;
+            btnExit.Font = new Font("メイリオ", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExit.Location = new Point(617, 12);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(75, 23);
+            btnExit.TabIndex = 18;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
+            // 
+            // btnAnswer
+            // 
+            btnAnswer.BackColor = Color.FromArgb(255, 255, 128);
+            btnAnswer.Cursor = Cursors.Hand;
+            btnAnswer.Font = new Font("メイリオ", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAnswer.Location = new Point(395, 460);
+            btnAnswer.Name = "btnAnswer";
+            btnAnswer.Size = new Size(75, 25);
+            btnAnswer.TabIndex = 19;
+            btnAnswer.Text = "Answer";
+            btnAnswer.UseVisualStyleBackColor = false;
+            btnAnswer.Click += btnAnswer_Click;
             // 
             // QuestionForm
             // 
@@ -174,13 +260,16 @@
             AutoSize = true;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(704, 501);
-            Controls.Add(Question);
-            Controls.Add(button5);
-            Controls.Add(button4);
-            Controls.Add(Answer4);
-            Controls.Add(Answer3);
-            Controls.Add(Answer2);
-            Controls.Add(Answer1);
+            Controls.Add(btnAnswer);
+            Controls.Add(btnExit);
+            Controls.Add(lblAns4);
+            Controls.Add(lblAns3);
+            Controls.Add(lblAns2);
+            Controls.Add(lblAns1);
+            Controls.Add(QuestionPanel);
+            Controls.Add(lblQuestionNo);
+            Controls.Add(btnNext);
+            Controls.Add(btnBack);
             Controls.Add(Button_Answer4);
             Controls.Add(Button_Answer2);
             Controls.Add(Button_Answer3);
@@ -189,6 +278,10 @@
             Text = "Main";
             TransparencyKey = Color.FromArgb(255, 192, 192);
             Load += Form1_Load;
+            QuestionPanel.ResumeLayout(false);
+            QuestionPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureNG).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureOK).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,12 +291,18 @@
         private Button Button_Answer3;
         private Button Button_Answer2;
         private Button Button_Answer4;
-        private TextBox Answer1;
-        private TextBox Answer2;
-        private TextBox Answer3;
-        private TextBox Answer4;
-        private Button button4;
-        private Button button5;
-        private TextBox Question;
+        private Button btnBack;
+        private Button btnNext;
+        private Label lblQuestionNo;
+        private Panel QuestionPanel;
+        protected Label lblQuestion;
+        private Label lblAns1;
+        private Label lblAns2;
+        private Label lblAns3;
+        private Label lblAns4;
+        private Button btnExit;
+        private PictureBox pictureNG;
+        private PictureBox pictureOK;
+        private Button btnAnswer;
     }
 }

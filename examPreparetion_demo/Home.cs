@@ -30,12 +30,19 @@ namespace examPreparetion_demo
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            var form = new QuestionForm();
+            QuestionForm form = new QuestionForm();
             this.Hide();
 
             if(form.ShowDialog() == DialogResult.Cancel) 
             {
-                this.Show();
+                try
+                {
+                    this.Show();
+                }
+                catch 
+                {
+                    //処理なし
+                }
             }
         }
     }

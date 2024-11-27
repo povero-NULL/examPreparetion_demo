@@ -19,3 +19,17 @@ Next：正解を確認し次の問題に映る。(未着手）
 ## Program.cs
 メイン処理を実施。
 Homeの表示。
+
+## Process.cs
+QuestionFormでの処理を担当。
+
+# Questionクラス
+questionStatement：問題文
+answer1：解答①
+answer2：解答②
+answer3：解答③
+answer4：解答④
+correctAnswer：正解番号
+
+# Question LoadQuestion(int questionId)
+テキストファイルから問題を読み込み、Question型リストに保存
